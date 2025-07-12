@@ -1,0 +1,47 @@
+{
+  "app_name": "CineShelf",
+  "general": {
+    "app_name": "CineShelf",
+    "email": "Email",
+    "hint_email": "Enter your email..",
+    "password": "Password",
+    "hint_password": "Enter your password..",
+    "username": "Full Name",
+    "hint_username": "Enter your full name here..",
+    "text_phone": "Phone Number",
+    "text_phone_hint": "Enter your phone number here..",
+    "text_address": "Address",
+    "text_hint_address": "Enter your address here..",
+    "text_login": "Login",
+    "text_signup": "Create Account",
+    "text_register": "Register",
+    "appbar_dashboard": "Dashboard",
+    "appbar_favourites": "Favourites",
+    "appbar_account": "Account",
+    "text_go_back": "Go Back"
+  },
+  "message": {
+    "registration_success": "Registration Successfull",
+    "favorite_added": "{item} added to favourites.",
+    "favourite_removed": "{item} removed from favourites."
+  },
+  "error": {
+    "email_empty": "Email should not be empty.",
+    "email_invalid": "Please enter a valid email address",
+    "email_used": "This email is already in use.Please register with a different email.",
+    "password_empty": "Password should not be empty.",
+    "password_invalid": "Password should contain atleast one uppercase,one lowercase, one digit, one special character and alteast 5 character length",
+    "user_not_found": "User not found. Please try again with different email address.",
+    "invalid_credentials": "Invalid email or password.Please try again.",
+    "name_empty": "Please do not leave your full name empty.",
+    "name_short": "Please enter atleast 5 characters for name.",
+    "user_already_exists": "User with same email address exists already. Please try different email address to register.",
+    "empty_data": "No results availalble.",
+    "empty_movies": "No movies available at the moment.Please try again later.",
+    "login_required": "Please login to use this feature.",
+    "favourites_empty": "No Favourite Movies available.",
+    "task_failed": "Could not complete your task at the moment. Please try again later..",
+    "text_weak_password": "Your password is weak. Please try again with stronger password.",
+    "text_field_required": "{field_label} is required"
+  }
+}

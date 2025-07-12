@@ -1,0 +1,47 @@
+{
+  "app_name": "CineShelf",
+  "general": {
+    "app_name": "CineShelf",
+    "email": "אימייל",
+    "hint_email": "הזן את האימייל שלך...",
+    "password": "סיסמה",
+    "hint_password": "הזן את הסיסמה שלך...",
+    "username": "שם מלא",
+    "hint_username": "הזן את שמך המלא כאן...",
+    "text_phone": "מספר טלפון",
+    "text_phone_hint": "הזן את מספר הטלפון שלך כאן...",
+    "text_address": "כתובת",
+    "text_hint_address": "הזן את הכתובת שלך כאן...",
+    "text_login": "התחברות",
+    "text_signup": "צור חשבון",
+    "text_register": "הרשמה",
+    "appbar_dashboard": "לוח בקרה",
+    "appbar_favourites": "מועדפים",
+    "appbar_account": "חשבון",
+    "text_go_back": "חזור אחורה"
+  },
+  "message": {
+    "registration_success": "ההרשמה הצליחה",
+    "favorite_added": "{item} נוסף למועדפים.",
+    "favourite_removed": "{item} הוסר מהמועדפים."
+  },
+  "error": {
+    "email_empty": "שדה האימייל לא יכול להיות ריק.",
+    "email_invalid": "אנא הזן כתובת אימייל תקינה.",
+    "email_used": "האימייל הזה כבר בשימוש. אנא הירשם עם אימייל אחר.",
+    "password_empty": "שדה הסיסמה לא יכול להיות ריק.",
+    "password_invalid": "הסיסמה צריכה לכלול לפחות אות אחת גדולה, אות קטנה, מספר, תו מיוחד ואורך של לפחות 5 תווים.",
+    "user_not_found": "המשתמש לא נמצא. אנא נסה אימייל אחר.",
+    "invalid_credentials": "אימייל או סיסמה לא נכונים. נסה שוב.",
+    "name_empty": "אל תשאיר את שדה השם המלא ריק.",
+    "name_short": "אנא הזן לפחות 5 תווים לשם.",
+    "user_already_exists": "משתמש עם כתובת האימייל הזו כבר קיים. אנא השתמש באימייל אחר להרשמה.",
+    "empty_data": "אין תוצאות זמינות.",
+    "empty_movies": "אין סרטים זמינים כרגע. אנא נסה שוב מאוחר יותר.",
+    "login_required": "אנא התחבר כדי להשתמש בפונקציה זו.",
+    "favourites_empty": "אין סרטים מועדפים זמינים.",
+    "task_failed": "לא ניתן להשלים את הפעולה כעת. אנא נסה שוב מאוחר יותר.",
+    "text_weak_password": "הסיסמה שלך חלשה. נסה סיסמה חזקה יותר.",
+    "text_field_required": "שדה {field_label} הינו חובה"
+  }
+}
