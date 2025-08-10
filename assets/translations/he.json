@@ -1,0 +1,73 @@
+{
+  "app_name": "סינישלף",
+  "bottom_nav": {
+    "home": "דף הבית",
+    "favourites": "מועדפים",
+    "account": "חשבון",
+    "settings": "הגדרות"
+  },
+  "pages": {
+    "settings": "הגדרות"
+  },
+  "general": {
+    "app_name": "סינישלף",
+    "email": "אימייל",
+    "hint_email": "הכנס את האימייל שלך..",
+    "password": "סיסמה",
+    "hint_password": "הכנס את הסיסמה שלך..",
+    "username": "שם מלא",
+    "hint_username": "הכנס את שמך המלא כאן..",
+    "text_phone": "מספר טלפון",
+    "text_phone_hint": "הכנס את מספר הטלפון שלך כאן..",
+    "text_address": "כתובת",
+    "text_hint_address": "הכנס את הכתובת שלך כאן..",
+    "text_login": "התחברות",
+    "text_logout": "התנתקות",
+    "text_signup": "צור חשבון",
+    "text_register": "הרשמה",
+    "appbar_dashboard": "לוח מחוונים",
+    "appbar_favourites": "מועדפים",
+    "appbar_account": "חשבון",
+    "text_go_back": "חזור",
+    "text_similar_movies": "סרטים דומים",
+    "text_similar_tv_series": "סדרות טלוויזיה דומות",
+    "text_movies": "סרטים",
+    "text_series": "סדרות",
+    "text_casts": "שחקנים",
+    "text_login_required": "נדרשת התחברות",
+    "text_login_required_message": "אנא התחבר כדי לצפות בפרופיל שלך ולהוסיף תוכן למועדפים.",
+    "text_theme_selection": "ערכת נושא",
+    "text_theme_selection_subtitle": "בחר את ערכת הנושא המועדפת עליך לאפליקציה.",
+    "text_close": "סגור",
+    "text_confirm": "אישור"
+  },
+  "message": {
+    "registration_success": "הרשמה הצליחה",
+    "favorite_added": "{item} נוסף למועדפים.",
+    "favourite_removed": "{item} הוסר מהמועדפים.",
+    "registeration_success": "הרשמה הצליחה",
+    "registration_success_message": "ברוך הבא {user}",
+    "item_favourite_added": "הפריט נוסף למועדפים בהצלחה",
+    "item_favourite_removed": "הפריט הוסר מהמועדפים בהצלחה"
+  },
+  "error": {
+    "email_empty": "האימייל לא יכול להיות ריק.",
+    "email_invalid": "אנא הכנס כתובת אימייל חוקית.",
+    "email_used": "אימייל זה כבר בשימוש. אנא הירשם עם אימייל שונה.",
+    "password_empty": "הסיסמה לא יכולה להיות ריקה.",
+    "password_invalid": "הסיסמה חייבת להכיל לפחות אות גדולה אחת, אות קטנה אחת, ספרה אחת, תו מיוחד אחד ואורך של לפחות 5 תווים.",
+    "user_not_found": "המשתמש לא נמצא. אנא נסה שוב עם כתובת אימייל אחרת.",
+    "invalid_credentials": "אימייל או סיסמה שגויים. אנא נסה שוב.",
+    "name_empty": "אנא אל תשאיר את השם המלא ריק.",
+    "name_short": "אנא הכנס לפחות 5 תווים לשם.",
+    "user_already_exists": "משתמש עם כתובת אימייל זהה כבר קיים. אנא נסה להירשם עם אימייל שונה.",
+    "empty_data": "אין תוצאות זמינות.",
+    "empty_movies": "אין סרטים זמינים כרגע. אנא נסה שוב מאוחר יותר.",
+    "login_required": "אנא התחבר כדי להשתמש בתכונה זו.",
+    "favourites_empty": "אין סרטים מועדפים זמינים.",
+    "task_failed": "לא ניתן להשלים את המשימה כעת. אנא נסה שוב מאוחר יותר.",
+    "text_weak_password": "הסיסמה שלך חלשה. אנא נסה שוב עם סיסמה חזקה יותר.",
+    "text_field_required": "{field_label} הוא שדה חובה.",
+    "text_login_required": "נדרשת התחברות לשימוש בתכונה זו."
+  }
+}
