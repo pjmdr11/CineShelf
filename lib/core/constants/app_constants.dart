@@ -8,7 +8,11 @@ const viewTypeTrending = "Trending";
 const viewTypeTopRated = "Top-Rated";
 
 const viewTypeOrder = [viewTypeTrending, viewTypePopular, viewTypeTopRated];
-const supportedLanguages = {"en": "English", "he": "Hebrew", "hi": "Hindi"};
+const supportedLanguages = {
+  "en": {"label": "English", "locale": "en_US"},
+  "he": {"label": "Hebrew", "locale": "he_IL"},
+  "hi": {"label": "Hindi", "locale": "hi_IN"},
+};
 
 const storeCollectionUsers = "users";
 const storeCollectionFavourites = "favourites";

@@ -71,5 +71,11 @@
     "text_weak_password": "Your password is weak. Please try again with stronger password.",
     "text_field_required": "{field_label} is required",
     "text_login_required": "Login required to use this feature."
-  }
+  },
+  "system": "System",
+  "dark": "Dark",
+  "light": "Light",
+  "Hebrew": "Hebrew",
+  "English": "English",
+  "Hindi": "Hindi"
 }

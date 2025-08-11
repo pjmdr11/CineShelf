@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:cine_shelf/core/di/injection.dart';
+import 'package:cine_shelf/core/extensions/string_utils.dart';
 import 'package:cine_shelf/core/theme/app_theme.dart';
 import 'package:cine_shelf/core/utils/app_router.dart';
+import 'package:cine_shelf/features/app/presentation/provider/app_state_provider.dart';
 import 'package:cine_shelf/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -27,9 +29,13 @@ void main() async {
         enabled: kIsWeb && kDebugMode,
         tools: const [...DevicePreview.defaultTools],
         builder: (context) => EasyLocalization(
-          supportedLocales: [Locale('en'), Locale('hi'), Locale('he')],
+          supportedLocales: [
+            Locale('en', 'US'),
+            Locale("he", "IL"),
+            Locale("hi", "IN"),
+          ],
           path: 'assets/translations',
-          fallbackLocale: Locale('en'),
+          fallbackLocale: Locale('en', 'US'),
           child: const ProviderScope(child: MyApp()),
         ),
       ),
@@ -37,10 +43,15 @@ void main() async {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref
+        .read(appStateNotifierProvider.notifier)
+        .setLocaleValue(context.locale.toString());
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       splitScreenMode: true,
@@ -58,11 +69,14 @@ class MyApp extends StatelessWidget {
           ),
           routerConfig: AppRouter.router,
           localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
           locale: context.locale,
+          supportedLocales: context.supportedLocales,
           debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.system,
           theme: AppTheme.getlightTheme(context),
+          themeMode: ref
+              .watch(appStateNotifierProvider)
+              .appTheme
+              .getAppThemeMode(),
           darkTheme: AppTheme.getDarkTheme(context),
         );
       },

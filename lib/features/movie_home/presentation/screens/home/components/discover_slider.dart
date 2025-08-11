@@ -6,19 +6,21 @@ import 'package:cine_shelf/core/constants/route_constants.dart';
 import 'package:cine_shelf/core/extensions/responsive_util.dart';
 import 'package:cine_shelf/core/utils/screen_utils.dart';
 import 'package:cine_shelf/features/movie_home/data/models/content_item.dart';
+import 'package:cine_shelf/features/movie_home/presentation/provider/movie_home_provider.dart';
 import 'package:cine_shelf/presentation/common/custom_image_view.dart';
 import 'package:cine_shelf/presentation/common/spacers/spacer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class DiscoverSlider extends StatelessWidget {
+class DiscoverSlider extends ConsumerWidget {
   final List<ContentItem> discover;
   const DiscoverSlider({super.key, required this.discover});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SliverAppBar(
       expandedHeight: ScreenUtils.isTablet(context) ? 360.r : 300.r,
       snap: false,
@@ -97,7 +99,9 @@ class DiscoverSlider extends StatelessWidget {
                       height: ScreenUtils.isTablet(context) ? 270.r : 210.r,
                       autoPlayInterval: Duration(seconds: 5),
                       onPageChanged: (index, reason) {
-                        //todo handle slider change
+                        ref
+                            .read(discoverSliderNotifierProvider.notifier)
+                            .setSliderIndex(index);
                       },
                       autoPlayAnimationDuration: Duration(seconds: 1),
                       enableInfiniteScroll: true,
@@ -120,13 +124,15 @@ class DiscoverSlider extends StatelessWidget {
   }
 }
 
-class SliderTitleWidget extends StatelessWidget {
+class SliderTitleWidget extends ConsumerWidget {
   final List<ContentItem> discoverItems;
   const SliderTitleWidget({super.key, required this.discoverItems});
 
   @override
-  Widget build(BuildContext context) {
-    final selectedIndex = 0; //Todo Get Selected Slider Index from state.
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedIndex = ref
+        .watch(discoverSliderNotifierProvider)
+        .selectedSliderIndex;
     final selectedItem = discoverItems[selectedIndex];
     final title = selectedItem.title ?? (selectedItem.name ?? "");
 
@@ -146,13 +152,15 @@ class SliderTitleWidget extends StatelessWidget {
   }
 }
 
-class BackDropWidget extends StatelessWidget {
+class BackDropWidget extends ConsumerWidget {
   final List<ContentItem> discoverItems;
   const BackDropWidget({super.key, required this.discoverItems});
 
   @override
-  Widget build(BuildContext context) {
-    final selectedIndex = 0; //Get Selected Slider Index from state.
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedIndex = ref
+        .watch(discoverSliderNotifierProvider)
+        .selectedSliderIndex;
     final selectedItem = discoverItems[selectedIndex];
     final backdropImage = selectedItem.backdropPath ?? "";
     final imageUrl = "$imageRoute$backdropImage";

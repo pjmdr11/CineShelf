@@ -1,10 +1,12 @@
 import 'package:cine_shelf/core/constants/app_constants.dart';
 import 'package:cine_shelf/core/extensions/responsive_util.dart';
 import 'package:cine_shelf/core/extensions/string_utils.dart';
+import 'package:cine_shelf/features/app/presentation/provider/app_state_provider.dart';
 import 'package:cine_shelf/features/app/presentation/screens/dashboard_page_view/components/app_bar.dart';
 import 'package:cine_shelf/presentation/common/spacers/spacer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -29,11 +31,11 @@ class SettingsPage extends StatelessWidget {
   }
 }
 
-class LanguageSelection extends StatelessWidget {
+class LanguageSelection extends ConsumerWidget {
   const LanguageSelection({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
       title: Text(
         "general.text_language_selection".tr(),
@@ -57,7 +59,7 @@ class LanguageSelection extends StatelessWidget {
           return DropdownMenuItem<String>(
             value: entry.key,
             child: Text(
-              entry.value,
+              entry.value["label"].toString().tr(),
               style: Theme.of(
                 context,
               ).textTheme.bodyMedium?.copyWith(fontSize: 14.rf()),
@@ -66,7 +68,10 @@ class LanguageSelection extends StatelessWidget {
         }).toList(),
         onChanged: (newLanguage) {
           if (newLanguage != null) {
-            context.setLocale(Locale(newLanguage));
+            final locale = supportedLanguages[newLanguage]?["locale"];
+            final primary = locale.toString().split('_').first;
+            final secondary = locale.toString().split('_').last;
+            context.setLocale(Locale(primary, secondary));
           }
         },
       ),
@@ -74,11 +79,11 @@ class LanguageSelection extends StatelessWidget {
   }
 }
 
-class ThemeSelectionWidget extends StatelessWidget {
+class ThemeSelectionWidget extends ConsumerWidget {
   const ThemeSelectionWidget({super.key});
   @override
-  Widget build(BuildContext context) {
-    final themeMode = ThemeMode.dark.name;
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(appStateNotifierProvider).appTheme;
     return ListTile(
       title: Text(
         "general.text_theme_selection".tr(),
@@ -111,7 +116,9 @@ class ThemeSelectionWidget extends StatelessWidget {
         }).toList(),
         onChanged: (newMode) {
           if (newMode != null) {
-            //TODO update theme mode in state.
+            ref
+                .read(appStateNotifierProvider.notifier)
+                .changeTheme(newMode.name);
           }
         },
       ),
