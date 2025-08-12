@@ -23,6 +23,11 @@ import '../../features/app/domain/usecases/get_apptheme.dart' as _i202;
 import '../../features/app/domain/usecases/get_isfirstopen.dart' as _i817;
 import '../../features/app/domain/usecases/set_apptheme.dart' as _i24;
 import '../../features/app/domain/usecases/set_locale.dart' as _i4;
+import '../../features/app/presentation/cubit/app_cubit.dart' as _i222;
+import '../../features/app/presentation/screens/dashboard_page_view/cubit/dashboard_cubit.dart'
+    as _i577;
+import '../../features/app/presentation/screens/splashscreen/cubit/splash_screen_cubit.dart'
+    as _i169;
 import '../../features/auth/data/repository/user_repository_impl.dart' as _i979;
 import '../../features/auth/domain/repository/user_repository.dart' as _i714;
 import '../../features/auth/domain/usecases/login_use_case.dart' as _i37;
@@ -99,7 +104,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i1007.FavouriteDataSource>(
       () => _i1007.FavouriteDataSource(),
     );
+    gh.lazySingleton<_i577.DashboardCubit>(() => _i577.DashboardCubit());
+    gh.lazySingleton<_i169.SplashScreenCubit>(() => _i169.SplashScreenCubit());
     gh.lazySingleton<_i469.EnvHelper>(() => _i469.EnvHelper());
+    gh.lazySingleton<_i222.AppCubit>(() => _i222.AppCubit());
     gh.lazySingleton<_i361.Dio>(
       () => dioModule.dio(gh<_i469.EnvHelper>()),
       registerFor: {_prod, _dev},

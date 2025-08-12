@@ -1,5 +1,6 @@
 import 'package:cine_shelf/core/constants/route_constants.dart';
 import 'package:cine_shelf/features/app/presentation/screens/dashboard_page_view/dashboard_page_view.dart';
+import 'package:cine_shelf/features/app/presentation/screens/splashscreen/splash_screen.dart';
 import 'package:cine_shelf/features/auth/presentation/screens/accounts/accounts_page.dart';
 import 'package:cine_shelf/features/auth/presentation/screens/login_page/login_page.dart';
 import 'package:cine_shelf/features/auth/presentation/screens/register/register_page.dart';
@@ -24,7 +25,7 @@ class AppRouter {
       GoRoute(
         path: routeDefault,
         builder: (BuildContext context, GoRouterState state) {
-          return SettingsPage();
+          return SplashScreenPage();
         },
       ),
       ShellRoute(
